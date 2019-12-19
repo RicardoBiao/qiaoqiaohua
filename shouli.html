@@ -22,7 +22,7 @@
       padding: 0;
       margin: 0;
     }
-    .txt {
+    .title {
         width: auto;
         position: relative;
         color: white;
@@ -81,7 +81,7 @@
 </head>
 <body>
     <div class="app">
-        <div class="txt">请输入手机号码</div>
+        <div class="title">请输入手机号码</div>
         <div class="musicbox"><img class="music" src="data:image/png;base64,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" alt="musicboxpicture"></div>
         <div class="phonenumberbox">
             <input type="number" placeholder="输入手机号码" name="inputnumber">
