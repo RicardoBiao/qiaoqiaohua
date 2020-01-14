@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>潮宏基悄悄话</title>
+    <style type="text/css">
+        div.app {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: url(https://qiaoqiaohua.oss-cn-hangzhou.aliyuncs.com/tow-cloud.6e69418.png) no-repeat;
+            background-size: 100% auto;
+        }
+
+        .title {
+            width: auto;
+            position: relative;
+            color: white;
+            margin-top: 17vw;
+            text-align: center;
+            font-size: 5.3vw;
+            letter-spacing: 0.5vw;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+        }
+
+        .day-icon {
+            display: flex;
+            flex-direction: row;
+            margin: 5vw auto;
+            font-size: 3.4vw;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .img-day {
+            width: 13.33vw;
+            height: 13.33vw;
+        }
+
+        p {
+            margin: 0;
+        }
+        .day-between img.img-bt {
+            width: 6.7vw;
+            height: 1vw;
+            margin-top: 6.7vw;
+        }
+        .content-box {
+            position:relative;
+            box-sizing: border-box;
+            left: 10vw;
+            width: 80vw;
+        }
+        .tip {
+            font-size: 4vw;
+            color: #ffffff;
+        }
+        .ways .way {
+            display: inline;
+            text-align: center;
+            padding: 1.6vw 2.13vw;
+            background-color: #f9e7e9;
+            color: #eb7f8b;
+            border-radius: 3.34vw;
+            font-size: 2vw;
+        }
+        .ways div{
+            display: inline;
+            text-align: center;
+            padding: 1.6vw 2vw;
+            color: #ffffff;
+            font-size: 2vw;
+        }
+       .waygroup {
+           margin-top: 3vw;
+           
+       }
+       .date {
+            display: inline;
+            text-align: center;
+            padding: 1.6vw 4vw;
+            background-color: #ffffff;
+            color: #eb7f8b;
+            border-radius: 3.34vw;
+            font-size: 2vw;
+            position:absolute;
+       }
+       .ways {
+           display: inline;           
+           margin-right: 17vw;
+       }
+       .content {
+           box-sizing: border-box;
+           width: 80vw;
+       }
+       textarea{
+           background-color: #ffffff;
+           box-sizing: border-box;
+           width: 80vw;
+           margin-top: 5vw;
+           border-radius: 1vw;
+           padding: 3vw;
+           border: none;
+           font-size: 3.733vw;
+           height: 24vw;
+           color: #b6a4a3;
+       }
+       .btn-item {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+       }
+       .voice-icon {
+           width: 24vw;
+           height: 24vw;
+           margin-top: 3vw;       
+       }
+       .voice-recoding {
+        font-size: 3.733vw;
+        line-height: 1;
+        font-weight: 500;
+        color: #ffffff;
+        margin-top: 2vw;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="title">连续录制3天表白语</div>
+        <div class="day-icon">
+            <div class="daygroup">
+                <img class="img-day" src="https://chjqqh.yaoqingwo.com/static/img/star.c8964d4.png" alt="daypicture">
+                <p>Day1</p>
+            </div>
+            <div class="day-between">
+                <img class="img-bt" src="https://ricardo-bucket.oss-cn-hangzhou.aliyuncs.com/images/daybetween.png" alt="day-between.png">
+            </div>
+            <div class="daygroup">
+                <img class="img-day" src="https://ricardo-bucket.oss-cn-hangzhou.aliyuncs.com/images/Day2.png" alt="daypicture">
+                <p>Day2</p>
+            </div>
+            <div class="day-between">
+                <img class="img-bt"  src="https://ricardo-bucket.oss-cn-hangzhou.aliyuncs.com/images/daybetween.png" alt="day-between.png">
+            </div>
+            <div class="daygroup">
+                <img class="img-day" src="https://ricardo-bucket.oss-cn-hangzhou.aliyuncs.com/images/Day2.png" alt="daypicture">
+                <p>Day3</p>
+            </div>
+        </div>
+        <div class="content-box">
+            <p class="tip">我要...</p>
+            <div class="waygroup">
+                <div class="ways">
+                    <div class="way">录音</div>
+                    <div>视频</div>
+                    <div>图文</div>
+                </div>
+                <!-- <div class="date">点击选择日期</div> -->
+            </div>
+            <div class="content">
+                <textarea name="contentarea" id="voice-content" cols="30" rows="10" placeholder="输入你想对ta说的话～"></textarea>
+            </div>
+            <div class="btn-item">
+                <img class="voice-icon" src="https://qiaoqiaohua.oss-cn-hangzhou.aliyuncs.com/sound-recording-icon.png" alt="开始录音.png">
+                <p class="voice-recoding">点击录音</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script>
+       $(function() {
+           $(".ways div").each(function(index) {
+               $(this).click(function() {
+                   $(".ways div").eq(index).addClass("way").siblings().removeClass("way")
+               })
+            })
+       });
+</script>
+
+</html>
