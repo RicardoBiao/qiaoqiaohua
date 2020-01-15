@@ -100,11 +100,11 @@
        .date {
             display: inline;
             text-align: center;
-            padding: 1.6vw 4vw;
+            padding: 1.6vw 2vw;
             background-color: #ffffff;
             color: #eb7f8b;
             border-radius: 3.34vw;
-            font-size: 2vw;
+            font-size: 3.5vw;
             position:absolute;
        }
        .ways {
@@ -144,6 +144,9 @@
         font-weight: 500;
         color: #ffffff;
         margin-top: 2vw;
+       }
+       textarea {
+           resize: none;
        }
     </style>
 </head>
@@ -201,6 +204,17 @@
                })
             })
        });
+
+if(/Android [4-9]/.test(navigator.appVersion)) {
+   window.addEventListener("resize", function() {
+      if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+         window.setTimeout(function() {
+            document.activeElement.scrollIntoViewIfNeeded();
+         },0);
+      }
+   })
+}
+
 </script>
 
 </html>
